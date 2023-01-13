@@ -32,7 +32,7 @@ Deseja verificar mais algum número?
 
 Para o código ficar mais limpo, primerio é criado uma função chamada `converter_para_romanos`, que receberá um `numero`. Essa função retornará o símbolo desejado.
 
-Dentro da função é criado um dicionário para armazenar todos os símbolos possíveis para a conversão. Já é adicionado símbolos como o `IV`, `IX` para evitar de fazemos cálculos de subtração e adição.
+Dentro da função é criado um dicionário para armazenar todos os símbolos possíveis para a conversão. Já é adicionado símbolos como o `IV`, `IX` para evitar fazer cálculos de subtração e adição.
 
 ```python
 romanos = {
@@ -58,11 +58,11 @@ Depois, é declarado a variável que receberá o resultado da função.
 resultado = ''
 ```
 
-A lógica utilizada é que, vamos pegar um número qualquer, e derivar ele até o último algarismo. Lógica parecida com sistema de máquina de dinheiro.
+A lógica utilizada é que, vamos pegar um número qualquer, e derivar até o último algarismo. Lógica parecida com sistema de máquina de dinheiro.
 
-Imagina que é necessário sacar R$225,00 no caixa do banco. Primeiro seria verificado qual era a maior cédula possível, que no caso é 100, e assim por diante. Seria necessárias duas notas de 100, uma de 20, e outra de 5.
+Imagine que é necessário sacar R$225,00 no caixa do banco. As notas possíveis são `[2, 5, 10, 20, 50, 100]`, para o sistema da máquina sacar 225, seria necessária verificar qual a maior cédula possível. No exemplo apresentado é 100, subtrai o 100, e continua até sacar todas as notas. Seria necessárias duas notas de 100, uma de 20, e outra de 5.
 
-É essa a lógica que vamos usar.
+É essa a lógica que vamos usar, mas ao invés das notas `[2, 5, 10, 20, 50, 100]`, vamos utilizar os valores `[1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]`, correspondentes aos simbolos `[I, IV, V, IX, X, XL, L, XC, C, CD, D, CM, M]`, pois todos os outros símbolos são derivados desses.
 
 Tendo isso em vista, vamos fazer um loop para derivar até o último algarismo possível, que é 1 (I).
 
@@ -83,7 +83,7 @@ if chave <= numero:
     maior_possivel = chave
 ```
 
-Poderia ser feito um `break` para quebrar o loop, mas como o dicionário é pequeno, optei por não quebrar, mas em programas mais complexo seria o ideal.
+Poderia ser feito um `break` para quebrar o loop, mas como o dicionário é pequeno, optei por não quebrar, mas em programas mais complexos seria o ideal.
 
 Depois de coletado o algarismo, diminuímos o `numero` para continuar a derivar.
 
