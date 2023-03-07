@@ -135,3 +135,7 @@ if opcao_usuario not in [1, 2]:
     print()
     print('Não entendi!')
 ```
+
+## Mais projetos python
+
+Mais estudos sobre python: https://github.com/andre-jnr/estudos-python
